@@ -39,7 +39,7 @@ router.post(
 
       await user.save()
 
-      res.status(500).join({ message: 'Пользователь создан' })
+      res.status(201).json({ message: 'Пользователь создан' })
     } catch (e) {
       res
         .status(500)
@@ -48,7 +48,7 @@ router.post(
   }
 )
 
-// /api/auth/register
+// /api/auth/login
 router.post(
   '/login',
   [
@@ -82,7 +82,7 @@ router.post(
           .json({ message: 'Неверный пароль, попробуйте снова' })
       }
 
-      const token = jwt.sigh({ userId: jwt.id }, config.get('jwtSecret'), {
+      const token = jwt.sign({ userId: jwt.id }, config.get('jwtSecret'), {
         expiresIn: '1h',
       })
 
