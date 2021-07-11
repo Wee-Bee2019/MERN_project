@@ -1,5 +1,0 @@
-{
-  "port": 5000,
-  "jwtSecret": "for the Lich King",
-  "mongoUri": "mongodb+srv://Marat:7n96EdG@*p$2$kM@cluster0.ng7cb.mongodb.net/app?retryWrites=true&w=majority"
-}
