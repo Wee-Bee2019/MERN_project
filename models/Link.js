@@ -5,7 +5,8 @@ const schema = new Schema({
   to: { type: String, required: true, unique: true },
   code: { type: String, required: true, unique: true },
   date: { type: Date, dafault: Date.now },
-  clicks: {},
+  clicks: { type: Number, default: 0 },
+  owner: { type: Types.ObjectId, ref: 'User' },
 })
 
-module.exports = model('User', schema)
+module.exports = model('Link', schema)
